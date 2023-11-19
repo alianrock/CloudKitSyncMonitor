@@ -134,7 +134,7 @@ public class SyncMonitor: ObservableObject {
     ///             .foregroundColor(syncMonitor.syncStateSummary.symbolColor)
     ///     }
     ///
-    public var syncStateSummary: SyncSummaryStatus {
+    @Published public var syncStateSummary: SyncSummaryStatus {
         if networkAvailable == false { return .noNetwork }
         guard case .available = iCloudAccountStatus else { return .accountNotAvailable }
         if syncError { return .error }
